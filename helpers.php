@@ -15,7 +15,7 @@ function redirect($path)
 function showStockDaysTables($arr)
 {
     $months = [1 => 'Янв.', 2 => "Фев.", 3 => "Мар.", 4 => "Апр.", 5 => "Мая", 6 => "Июня",
-        7 => "Июля", 8 => "Авг.", 9 => "Сен.", 10 => "Окт.", 11 => "Ноя.", 12 => "Дек"];
+        7 => "Июля", 8 => "Авг.", 9 => "Сен.", 10 => "Окт.", 11 => "Ноя.", 12 => "Дек."];
 
     foreach ($arr as $yearKey => $arrDate){
         foreach ($arrDate as $key => $date){

@@ -3,11 +3,14 @@ require_once 'helpers.php';
 
 $yearClient = $_GET['year'];
 
-if ($yearClient < 2000){
-    $_SESSION['error'] = 'Магазин работает с 2000-го года. <a href="index.php">Введите корректный год</a>';
+$startStoreYear = 2000;
+$maxFutureYear = date('Y', time()) + 25; // определяем максимальный год как наст. время + 25 лет
+
+if ($yearClient < $startStoreYear){
+    $_SESSION['error'] = 'Магазин работает с ' . $startStoreYear . '-го года. <a href="index.php">Введите корректный год</a>';
     redirect('error.php');
-} elseif ($yearClient > 2050) {
-    $_SESSION['error'] = 'Акционные дни расчитаны только до 2050-го года (включительно). <a href="index.php">Введите корректный год</a>';
+} elseif ($yearClient > $maxFutureYear) {
+    $_SESSION['error'] = 'Акционные дни расчитаны только до ' . $maxFutureYear . '-го года (включительно). <a href="index.php">Введите корректный год</a>';
     redirect('error.php');
 }
 
